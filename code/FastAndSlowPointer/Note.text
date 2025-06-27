@@ -1,0 +1,36 @@
+The Fast and Slow pointer approach is also known as Hare and Tortoise algorithm.
+The mechanism is that one pointer is running twice as fast as another pointer. By doing this, if
+there is a cycle in the linked list, the slow pointer will eventually meet with the fast pointer.
+
+Speed of both pointers: Commonly the 'fast' pointer moves two steps at a time, while the 'slow'
+pointer moves one step at a time. This technique is usually applied to linked lists 
+(though it can be used in arrays or other sequential data structures) and is a 
+clever way to detect conditions like cycles or find a specific position (e.g., the middle).
+
+Why use Fase and Slow Pointers:
+1. Cycle Detection: The pattern helps in detecting cycles without extra space. 
+    You don’t need additional data structures like hash sets to keep track of visited nodes.
+2. Efficiency: By traversing the structure in a single pass, you reduce time complexity. 
+    You only use constant extra space—just two pointers!
+3. Finding Critical Positions: Using different movement speeds allows you to pinpoint 
+interesting locations, such as the middle of a list or the start of a cycle.
+
+Key Scenarios where this pattern shines:
+1. Linked List Cycle Detection: Whenever a problem states, “Given a linked list, 
+    determine if it has a cycle,” you should think about the Fast & Slow Pointers pattern.
+2. Middle of a Linked List: If you need to find the middle node of a list in one pass, 
+    the Fast & Slow Pointers approach is perfect.
+3. Length of a Cycle: After detecting a cycle, you can continue with the fast pointer to measure 
+    the cycle length.
+4. Reorder or Split Linked List: When partitioning or rearranging a linked list, 
+    finding the middle node is often crucial.
+
+
+Step-by-Step Movement
+    1. Initialization: Set both pointers to the head of the list.
+    2. Movement: In each iteration:
+        The slow pointer (let’s call it slow) moves by 1 node.
+        The fast pointer (let’s call it fast) moves by 2 nodes.
+    3. Check Condition:
+        If fast (or fast.next) becomes null, it means there’s no cycle (you’ve reached the end).
+        If slow meets fast, there is a cycle or a special condition we’re looking for.
