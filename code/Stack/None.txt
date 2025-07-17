@@ -1,0 +1,67 @@
+How Different Languages Implement Stacks
+    Language	API / Data Structure
+    Java	java.util.Stack
+    Python	Implemented through list
+    C++	std::stack
+    JavaScript	Implemented through Array
+    C#	System.Collections.Stack
+    Go	Implemented through slice
+
+
+A stack provides four fundamental operations:
+
+Push → Adds an element to the top of the stack.
+Pop → Removes the topmost element from the stack.
+Peek (or Top) → Returns the topmost element without removing it.
+IsEmpty → Checks if the stack is empty.
+IsFull → Checks if the stack is full.
+Each of these operations follows the LIFO order, 
+ensuring efficient data management.
+
+In the next lesson, we will explore stack operations in detail, 
+including their time complexities and practical implementations.
+
+Applications of Stack
+Stacks are widely used in computer science and real-world applications due to their 
+Last-In, First-Out (LIFO) behavior. They provide efficient solutions for problems 
+involving reversibility, function calls, and data backtracking. 
+
+Below are some key applications of stacks:
+
+1. Memory Management (Function Call Stack)
+Manages function calls in programming by pushing function calls onto the 
+stack and popping them after execution.
+Enables recursion, where each function call gets a new stack frame.
+Helps in tracking local variables and return addresses for each function.
+
+2. Expression Evaluation & Syntax Parsing
+Ensures correct execution order in arithmetic expressions by managing operator 
+precedence.Used in parsing programming languages, particularly for validating 
+brackets and expressions.
+Converts infix expressions to postfix notation, which is easier for computers 
+to evaluate.
+
+3. Undo/Redo Mechanism in Software
+Stores user actions as stack operations in text editors, image editors, and IDEs.
+Pressing Undo pops the last action from the stack and reverses it.
+Redo re-applies an action by pushing it back onto the stack.
+
+4. Backtracking Algorithms
+Used in problems that require trying different possibilities and reverting if needed.
+Common in Sudoku solvers, maze pathfinding, and the N-Queens problem.
+Stores previous states, allowing the algorithm to revert to an earlier position 
+when a dead end is reached.
+
+5. Depth-First Search (DFS) in Graphs
+DFS explores a graph deep into one path before backtracking.
+Uses a stack to store nodes that need to be visited.
+Helps in finding connected components, cycle detection, and solving maze problems.
+
+6. Web Page History (Back Button in Browsers)
+Every visited web page is pushed onto the history stack.
+Clicking "Back" pops the last visited page, returning the user to the previous one.
+This method allows users to navigate webpages in reverse order efficiently.
+Stacks are a simple yet powerful data structure with diverse applications in 
+memory management, problem-solving, and algorithm optimization. 
+Their efficiency in handling reversibility and sequential access makes them 
+essential in both software development and real-world computing systems.

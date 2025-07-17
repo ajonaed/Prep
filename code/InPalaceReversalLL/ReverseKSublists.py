@@ -12,6 +12,9 @@ Example 2:
     Output: 3 -> 2 -> 1 -> 4 -> 5
 '''
 
+'''# Time Complexity: O(N)
+# Space Complexity: O(1)'''
+
 
 class Node:
     def __init__(self, value, next=None):
@@ -59,24 +62,25 @@ def print_list(head):
         print(temp.val, end=" -> ")
         temp = temp.next
     print("None")
-    
-def main():
-  sol = Solution()
-  head = Node(1)
-  head.next = Node(2)
-  head.next.next = Node(3)
-  head.next.next.next = Node(4)
-  head.next.next.next.next = Node(5)
-  head.next.next.next.next.next = Node(6)
-  head.next.next.next.next.next.next = Node(7)
-  head.next.next.next.next.next.next.next = Node(8)
 
-  print("Nodes of original LinkedList are: ", end='')
-  print_list(head)
-  
-  result = sol.reverse(head, 3)
-  print("Nodes of reversed LinkedList are: ", end='')
-  print_list(result)
+
+def main():
+    sol = Solution()
+    head = Node(1)
+    head.next = Node(2)
+    head.next.next = Node(3)
+    head.next.next.next = Node(4)
+    head.next.next.next.next = Node(5)
+    head.next.next.next.next.next = Node(6)
+    head.next.next.next.next.next.next = Node(7)
+    head.next.next.next.next.next.next.next = Node(8)
+
+    print("Nodes of original LinkedList are: ", end='')
+    print_list(head)
+
+    result = sol.reverse(head, 3)
+    print("Nodes of reversed LinkedList are: ", end='')
+    print_list(result)
 
 
 main()
