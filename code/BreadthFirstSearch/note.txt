@@ -1,0 +1,37 @@
+| Concept    | Formula                                            | Base Case        |
+| ---------- | -------------------------------------------------- | ---------------- |
+| **Level**  | Level(node) = Level(parent) + 1                    | Level(Root) = 0  |
+| **Height** | `Height(N) = 1 + max(Height(left), Height(right))` | Height(Leaf) = 0 |
+
+🌳 1. Height of a Binary Tree
+Definition: The height is the number of edges on the longest path from the node 
+(typically the root) to a leaf.
+    --> Height(node) = 1 + max(Height(left_subtree), Height(right_subtree))
+    --> Leaf node has height 0
+    --> Empty tree has height -1 (by convention)
+
+🌲 2. Level (Depth) of a Node
+Definition: The level of a node is the number of edges from the root to that node.
+    --> Level(node) = Level(parent) + 1  
+    --> Root node is usually at Level 0 (or Level 1, depending on convention).
+    -->Level increases by 1 for each level down the tree.  
+
+✅ Python Code:
+def height(root):
+    if root is None:
+        return -1  # Height of empty tree is -1 by convention
+    return 1 + max(height(root.left), height(root.right))
+
+
+✅ Python Code to find level of a specific value:
+def get_level(root, target, level=0):
+    if root is None:
+        return -1
+    if root.val == target:
+        return level
+    left = get_level(root.left, target, level + 1)
+    if left != -1:
+        return left
+    return get_level(root.right, target, level + 1)
+
+
