@@ -1,0 +1,21 @@
+The Depth First Search(DFS) technique focuses on exploring one branch of the tree
+as far as possible before backtracking.
+This useful for problems requiring tree atraversal or handling hierarchical data
+
+The main types DFS include:
+    1. Pre-Order: Visit the root node first, then left, and finally the right 
+    subtree
+
+    2. In-Order: Visit the left subtree first, then root node, and lastly right 
+    subtree
+
+    3. Post-Order: Visit the left subtree, then right subtree, and then root node.
+
+To Solve DFS-based problems, the approach generally involves:
+    1. Recursive: Simple and follows the natural structure of a tree
+    2. Itertive: Uses a stack to mimic recursion and helps in memory optimization.
+
+DFS is ideal for scenarios where exploring entire paths or working with node 
+relationships is essential.
+
+2b31
