@@ -1,0 +1,114 @@
+Graphs can be represented in multiple ways depending on the use case. 
+The two most common methods are:
+
+Adjacency Matrix
+Adjacency List
+Let’s break down both approaches with examples for undirected and directed graphs.
+
+1 Adjacency Matrix
+    An adjacency matrix is a 2D array (or matrix) used to represent the presence 
+    or absence of edges between vertices.
+
+    The matrix is of size N × N, where N is the number of vertices.
+    Each cell (i, j) indicates whether there’s an edge from vertex i to vertex j.
+
+Adjacency matrix for Undirected Graph
+    If an edge exists between vertex i and j, then both A[i][j] 
+    and A[j][i] are set to 1.
+    If no edge exists, both entries are 0.
+    The matrix is symmetric across the diagonal.
+
+        A ------------- B
+        |               |
+        |               |
+        C ------------- D
+
+            A B C D
+        A  [0 1 1 0]
+        B  [1 0 1 1]
+        C  [1 1 0 0]
+        D  [0 1 0 0]
+
+Adjacency matrix for directed graphs
+    In a directed graph with N vertices, the adjacency matrix A will also 
+    be an N x N matrix. For a directed edge from vertex i to vertex j, 
+    the corresponding entry in the matrix (A[i][j]) will have the value of 1, 
+    indicating the presence of an edge from i to j. If there is no edge 
+    from vertex i to vertex j, the matrix entry will have the value of 0.
+
+    Example of a directed graph with 4 vertices (A, B, C, D) and 5 directed 
+    edges (A->B, A->C, C->D, D->B, D->C):  
+            A	B	C	D
+        A	0	1	1	0
+        B	0	0	1	0
+        C	0	0	0	1
+        D	1	1	1	0
+    The above figure explains the adjacency matrix of the directed graph in such 
+    a way that there is an edge between vertices A-C and A-B so 1 is placed there.
+
+
+Adjacency List
+    An adjacency list stores each vertex alongside a list of its neighbors. 
+    It is space-efficient for sparse graphs (graphs with fewer edges).
+
+    Each node maps to a list of connected nodes.
+    It is commonly implemented using arrays or hash maps with linked lists 
+    or dynamic arra
+
+Representing undirected graph using adjacency list
+    In an undirected graph, the edges between vertices have no direction. 
+    If vertex A is connected to vertex B, then vertex B is also connected 
+    to vertex A. As a result, the adjacency list for an undirected graph 
+    is symmetric. Here is an example of a undirected graph with four vertices
+    (A, B, C, D) and four edges.
+
+    A ------------- B
+    |               |
+    |               |
+    C ------------- D
+
+    A --> B --> C
+    B --> A --> D
+    C --> A --> D
+    D --> B --> C
+
+    Representing undirected graph using adjacency list
+    In an undirected graph, the edges between vertices have no direction. 
+    If vertex A is connected to vertex B, then vertex B is also connected to 
+    vertex A. As a result, the adjacency list for an undirected graph is 
+    symmetric. Here is an example of a undirected graph with four vertices
+    (A, B, C, D) and four edges.
+
+Representing directed graphs using adjacency list
+    In a directed graph, the edges between vertices have a direction. 
+    If vertex X is connected to vertex Y, it does not necessarily mean that 
+    vertex Y is connected to vertex X. As a result, the adjacency list for a 
+    directed graph is not symmetric.
+
+    A -------------> B
+    |                ^
+    |                |
+    |                |    
+    V                |
+    C -------------> D
+
+    Example of a directed graph with 4 vertices (A, B, C, D) and 4 directed edges 
+    (A->B, A->C, C->D, D->B):
+
+    A --> B --> C
+    B
+    C --> D
+    D --> B
+
+
+Final Words
+DFS can be used for various applications, such as finding connected components, 
+detecting cycles in the graph, topological sorting, and solving problems like 
+maze exploration or finding paths between nodes.
+
+It's essential to be cautious about infinite loops when traversing graphs that 
+may have cycles. To avoid this, the algorithm must keep track of visited nodes 
+and avoid revisiting nodes that have already been explored.
+
+Overall, DFS is a powerful graph traversal algorithm that can efficiently 
+explore the entire graph and is widely used in many graph-related problems.

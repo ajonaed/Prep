@@ -1,0 +1,90 @@
+Graphs are made up of nodes (vertices) connected by edges. Traversing a 
+graph means visiting all its nodes in a structured way. This helps solve 
+problems like finding paths, detecting cycles, and searching for specific values.
+
+Two widely used traversal techniques are:
+
+    Depth-First Search (DFS): Explores as far as possible along each branch before 
+    backtracking.
+    Breadth-First Search (BFS): Explores all neighbors of a node 
+    before moving deeper.
+
+Depth First Search(DFS) Using a Stack Data Structure
+Depth-First Search (DFS) is a graph traversal algorithm that explores all 
+the nodes in a graph by systematically visiting as far as possible along 
+each branch before backtracking. It operates on both directed and undirected
+ graphs and can be implemented using recursion or an explicit stack data structure.
+
+DFS starts from a selected source node (or a starting point) and explores 
+as deeply as possible along each branch before backtracking. 
+The algorithm visits nodes in a depth ward motion until it reaches a 
+leaf node with no unexplored neighbors. At that point, it backtracks 
+and explores other unexplored branches.
+
+Step-by-Step Algorithm
+Initialize the Data Structures:
+
+Create a visited array to track whether a node has been visited.
+Initialize an empty stack and push the starting node onto it.
+Traversal Loop:
+
+While the stack is not empty:
+Pop the top node from the stack and mark it as visited.
+Process the node (e.g., print it).
+Traverse through all neighbours of the node and push unvisited neighbours onto the stack. This step ensures that we explore the graph as deeply as possible.
+End Condition:
+
+The traversal ends when the stack becomes empty, indicating all reachable nodes have been visited.
+
+Graph Traversal - Breadth First Search (BFS)
+Breadth-First Search (BFS) is a graph traversal algorithm that explores a 
+graph's vertices (nodes) level by level. It starts from a selected source 
+node and moves outward to visit all the nodes at the same distance from 
+the source before moving on to nodes at the following distance level.
+
+BFS is particularly useful for finding the shortest path in unweighted graphs 
+and for systematically exploring graphs.
+
+Step-by-Step Algorithm for BFS
+
+Graph Initialization:
+    Create a graph with V vertices.
+    Represent the graph using an adjacency list, where each vertex has a 
+    list of its adjacent vertices.
+
+Mark All Vertices as Unvisited:
+
+Initialize a visited boolean array of size V, with all elements set to false.
+
+Initialize BFS Traversal:
+    Start from the given startVertex.
+    Mark startVertex as visited by setting visited[startVertex] = true.
+    Add startVertex to the queue.
+
+Perform BFS Traversal:
+
+    While the queue is not empty:
+        Dequeue a vertex (currentVertex) from the front of the queue.
+        Process the currentVertex (e.g., print its value).
+        For each neighbor of currentVertex (from its adjacency list):
+            If the neighbor is unvisited:
+                Mark it as visited.
+                Enqueue the neighbor into the queue.
+
+End Condition:
+The traversal ends when the queue becomes empty, meaning all reachable vertices 
+from the startVertex have been visited.
+
+
+Final Words
+This makes BFS efficient for graph traversal, particularly when combined 
+with the adjacency list representation. BFS is generally efficient for 
+searching and traversal when the graph is not too dense. For sparse graphs, 
+where E is much smaller than , the time complexity becomes almost linear, 
+making BFS a reasonable choice for many practical applications.
+
+BFS guarantees it visits nodes according to their distance from the source node. 
+It is an efficient algorithm to find the shortest path in unweighted graphs. 
+Additionally, BFS can find connected components, detect cycles, and solve 
+graph-related problems. However, it may consume more memory than DFS, 
+especially in graphs with a significant or infinite branching factor.

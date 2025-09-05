@@ -1,0 +1,139 @@
+A graph is a data structure used to represent relationships or connections 
+between objects. A graph consists of two main parts:
+
+Vertices (Nodes): Represent the individual objects.
+Edges (Links): Represent the connections between those objects.
+A graph is often denoted as G(V, E) where:
+
+V is the set of vertices.
+E is the set of edges connecting pairs of vertices.
+
+Consider a graph with five nodes A, B, C, D, and E, and the following connections:
+    A -----------  B
+    | \           /
+    |  \         /
+    C -- E ------D
+
+This graph forms a network of connections, where you can traverse from one node 
+to another based on the defined edges.
+
+As the graph grows larger, it can become highly interconnected, forming complex 
+relationships and paths.
+
+Adjacent Nodes: Two nodes are said to be adjacent if en  edge is connected directly.
+    Set of nodes adjacent to a particular node is known as neighborhood.
+
+Digraph: short for directed graph, where edges have direction
+
+Loop in Graph: A "loop" in a graph refers to an edge that connects a vertex to itself.
+it is an edge that starts and ends at the same vertex. Loops can exist in 
+both directed and undirected graphs.
+
+Degree of Nodes: The degree of a node is the number of edges connected to it.
+
+    The degree of a node in an undirected graph is defined as the number of 
+    edges connected to that node.
+
+    In a directed graph, there are two degrees:
+
+    The in-degree (number of incoming edges)
+
+    The out-degree (number of outgoing edges).
+
+Cycle: 
+
+A path in which the first and last vertices are the same, forming a closed loop. 
+The following figure shows a route from A to B, B to D, D to C, and C to A. 
+So here, the cycle completes because we start from vertex A and end again at 
+A vertex.
+
+    A -------------B
+    |              |
+    |              |
+    C -------------D
+
+
+Types of Graph
+    Graphs can vary based on how their edges behave, whether they carry weights, 
+    and how their nodes are connected. Understanding graph types is key to 
+    choosing the right algorithm for your problem.
+
+1. Undirected Graph
+    Edges have no direction.
+    If there’s an edge between A and B, you can go from A to B and also from B to A.
+    These graphs represent two-way relationships.
+    Example: A friendship network – if Alice is friends with Bob, Bob is also friends with Alice.
+
+2. Directed Graph
+    Edges point in one direction.
+    An edge from A to B only allows movement from A to B, not the other way.
+    Also called a digraph.
+    Example: Web links – one page may link to another, but not necessarily the reverse.
+
+3. Weighted Graph
+    Each edge has a value (weight) that represents distance, cost, time, etc.
+    Used when connections have varying importance or size.
+    Example: A road map where each road has a distance or travel time.
+
+4. Unweighted Graph
+    All edges are treated equally.
+    Edges don’t carry additional values—every connection is the same.
+    Example: A family tree or organizational chart where relationships just "exist" or "don’t".
+
+5. Cyclic Graph
+    Contains at least one cycle—a path that starts and ends at the same node.
+    The cycle must have at least three distinct nodes (to avoid looping back 
+    on a single edge).
+
+
+6. Acyclic Graph
+    Contains no cycles—you can’t return to the same node once you've left it.
+    There are two important cases:
+
+    Undirected Acyclic Graph
+
+    If it’s also connected, it is called a Tree.
+    A group of trees is called a Forest.
+    Directed Acyclic Graph (DAG)
+
+    A graph with directed edges and no cycles.
+    Can be topologically sorted, meaning nodes can be arranged linearly to 
+    respect the direction of edges.
+    
+    Example of DAG: Task scheduling – task A must happen before task B.
+
+
+7. Connected Graph
+    Every vertex is reachable from every other vertex.
+    Applies to undirected graphs.
+    Example: A network where all devices are linked directly or indirectly.
+
+
+8. Disconnected Graph
+    At least one node cannot be reached from another.
+    The graph is made up of separate connected components.
+    Example: Two social groups with no connections between them.
+
+
+9. Strongly Connected Graph
+    Applies to directed graphs.
+    A graph is strongly connected if there is a path from every node to every 
+    other node and back.
+    Example: In a city road system, if every one-way street still allows you 
+    to reach all other streets and return.
+
+
+
+Graph Type	    Direction	    Weights	    Cycles Allowed	    Example
+Undirected	        ?	        Optional	    Yes/No	        Friendship network
+Directed	        ?	        Optional	    Yes/No	        Web links
+Weighted	      ? / ?	            ?	        Yes/No	        Road map
+Unweighted	      ? / ?	            ?	        Yes/No          Family tree
+Cyclic	          ? / ?	        Optional	        ?	        Group of people
+                                                                forming a circle
+Acyclic (Tree/DAG) ? / ?	    Optional	        ?	        Task scheduling,
+                                                                directory tree
+Connected	        ?	        Optional	    Yes/No	        Fully linked network
+Disconnected	    ? / ?	    Optional	    Yes/No	        Multiple separate subgraphs
+Strongly Connected	?	        Optional	    Yes/No	        Fully reachable city 
+                                                                map (one-way)
